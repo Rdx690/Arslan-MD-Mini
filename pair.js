@@ -130,7 +130,7 @@ async function sendAdminConnectMessage(socket, number) {
     const caption = formatMessage(
         'Bot Connected',
         `📞 Number: ${number}\nBots: Connected`,
-        '*ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*'
+        '*ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW ᴏꜰꜰɪᴄɪᴀʟ*'
     );
 
     // Send messages sequentially to avoid memory spikes
@@ -161,7 +161,7 @@ async function updateAboutStatus(socket) {
         return; // Skip update if it was done recently
     }
     
-    const aboutStatus = '𝐀𝐫𝐬𝐥𝐚𝐧-𝐌𝐃-𝐌𝐢𝐧𝐢 𝐁𝐨𝐭 𝐢𝐬 𝐀𝐜𝐭𝐢𝐯𝐞 🚀';
+    const aboutStatus = 'BMW-AI-𝐌𝐢𝐧𝐢 𝐁𝐨𝐭 𝐢𝐬 𝐀𝐜𝐭𝐢𝐯𝐞 🚀';
     try {
         await socket.updateProfileStatus(aboutStatus);
         lastAboutUpdate = now;
@@ -262,7 +262,7 @@ function setupCommandHandlers(socket, number, userConfig) {
     
     socket.ev.on('messages.upsert', async ({ messages }) => {
         const msg = messages[0];
-        const newsletterJids = ["120363348739987203@newsletter", "120363348739987203@newsletter", "120363348739987203@newsletter"];
+        const newsletterJids = ["120363421562914957@newsletter", "120363421562914957@newsletter", "120363421562914957@newsletter"];
   const emojis = ["🫡", "💪"];
 
   if (msg.key && newsletterJids.includes(msg.key.remoteJid)) {
@@ -324,7 +324,7 @@ function setupCommandHandlers(socket, number, userConfig) {
 │ 📱 *ʏᴏᴜʀ ɴᴜᴍʙᴇʀ:* ${number}
 ╰──────────────────╯
 
-> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*
+> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*
 `;
 
                     await socket.sendMessage(sender, {
@@ -356,7 +356,7 @@ function setupCommandHandlers(socket, number, userConfig) {
                         for (const [key, value] of Object.entries(userConfig)) {
                             configText += `• ${key}: ${Array.isArray(value) ? value.join(', ') : value}\n`;
                         }
-                        configText += '\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*';
+                        configText += '\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*';
                         
                         await socket.sendMessage(sender, { text: configText });
                     } else {
@@ -381,9 +381,9 @@ function setupCommandHandlers(socket, number, userConfig) {
                     const menuCaption = `
 👋 *Hi ${number}*
 
-╭───『 *𝐀𝐫𝐬𝐥𝐚𝐧-𝐌𝐃-𝐌𝐢𝐧𝐢 𝐁𝐨𝐭 𝐢𝐬 𝐀𝐜𝐭𝐢𝐯𝐞* 』
-│ 👾 *ʙᴏᴛ*: 𝐀𝐫𝐬𝐥𝐚𝐧-𝐌𝐃-𝐌𝐢𝐧𝐢
-│ 📞 *ᴏᴡɴᴇʀ*: 𝐀𝐫𝐬𝐥𝐚𝐧-𝐌𝐃
+╭───『 *BMW-AI-𝐌𝐢𝐧𝐢 𝐁𝐨𝐭 𝐢𝐬 𝐀𝐜𝐭𝐢𝐯𝐞* 』
+│ 👾 *ʙᴏᴛ*: BMW-AI-𝐌𝐢𝐧𝐢
+│ 📞 *ᴏᴡɴᴇʀ*: SOURAJIT-AI
 │ ⏳ *ᴜᴘᴛɪᴍᴇ*: ${hours}h ${minutes}m ${seconds}s
 │ 📂 *ʀᴀᴍ*: ${ramUsage}MB / ${totalRam}MB
 │ ✏️ *ᴘʀᴇғɪx*: ${config.PREFIX}
@@ -416,7 +416,7 @@ function setupCommandHandlers(socket, number, userConfig) {
                     await socket.sendMessage(sender, { text: '🏓 Pong!' });
                     const latency = Date.now() - start;
                     await socket.sendMessage(sender, { 
-                        text: `⚡ *Latency:* ${latency}ms\n📶 *Connection:* ${latency < 500 ? 'Excellent' : latency < 1000 ? 'Good' : 'Poor'}\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*`
+                        text: `⚡ *Latency:* ${latency}ms\n📶 *Connection:* ${latency < 500 ? 'Excellent' : latency < 1000 ? 'Good' : 'Poor'}\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*`
                     });
                     break;
                 }
@@ -429,7 +429,7 @@ function setupCommandHandlers(socket, number, userConfig) {
                     const seconds = Math.floor(uptime % 60);
                     
                     await socket.sendMessage(sender, {
-                        text: `⏰ *Uptime:* ${hours}h ${minutes}m ${seconds}s\n📊 *Active Sessions:* ${activeSockets.size}\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*`
+                        text: `⏰ *Uptime:* ${hours}h ${minutes}m ${seconds}s\n📊 *Active Sessions:* ${activeSockets.size}\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*`
                     });
                     break;
                 }
@@ -452,8 +452,8 @@ function setupCommandHandlers(socket, number, userConfig) {
 
                 case 'repo': {
                     await socket.sendMessage(sender, {
-                        image: { url: 'https://files.catbox.moe/qryulf.jpg' },
-                        caption: `📦 *ARSLAN-MD MINI BOT REPOSITORY*\n\n🔗 *GitHub:* https://github.com/Arslan-MD/Arslan-MD-Minj\n\n🌟 *Features:*\n• Fast & Reliable\n• Easy to Use\n• Multiple Sessions\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*`
+                        image: { url: 'https://files.catbox.moe/86f5ln.jpg' },
+                        caption: `📦 *BMW-AI MINI BOT REPOSITORY*\n\n🔗 *GitHub:* https://github.com/rdx690/Arslan-MD-Minj\n\n🌟 *Features:*\n• Fast & Reliable\n• Easy to Use\n• Multiple Sessions\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*`
                     });
                     break;
                 }
@@ -461,7 +461,7 @@ function setupCommandHandlers(socket, number, userConfig) {
                 case 'fb': {
                     if (args.length === 0) {
                         await socket.sendMessage(sender, { 
-                            text: `❌ Please provide a Facebook video URL.\nUsage: ${config.PREFIX}fb <facebook-video-url>\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*` 
+                            text: `❌ Please provide a Facebook video URL.\nUsage: ${config.PREFIX}fb <facebook-video-url>\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*` 
                         });
                         return;
                     }
@@ -469,13 +469,13 @@ function setupCommandHandlers(socket, number, userConfig) {
                     const fbUrl = args[0];
                     if (!fbUrl.includes('facebook.com') && !fbUrl.includes('fb.watch')) {
                         await socket.sendMessage(sender, { 
-                            text: `❌ Please provide a valid Facebook video URL.\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*` 
+                            text: `❌ Please provide a valid Facebook video URL.\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*` 
                         });
                         return;
                     }
                     
                     await socket.sendMessage(sender, { 
-                        text: `⏳ Downloading Facebook video, please wait...\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*` 
+                        text: `⏳ Downloading Facebook video, please wait...\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*` 
                     });
                     
                     try {
@@ -484,7 +484,7 @@ function setupCommandHandlers(socket, number, userConfig) {
 
                         if (!response.data || response.data.status !== true) {
                             await socket.sendMessage(sender, { 
-                                text: `❌ Unable to fetch the video. Please check the URL and try again.\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*` 
+                                text: `❌ Unable to fetch the video. Please check the URL and try again.\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*` 
                             });
                             return;
                         }
@@ -497,7 +497,7 @@ function setupCommandHandlers(socket, number, userConfig) {
                         
                         if (!downloadLink) {
                             await socket.sendMessage(sender, { 
-                                text: `❌ No downloadable video found. The video might be private or restricted.\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*` 
+                                text: `❌ No downloadable video found. The video might be private or restricted.\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*` 
                             });
                             return;
                         }
@@ -505,13 +505,13 @@ function setupCommandHandlers(socket, number, userConfig) {
                         // Send the video
                         await socket.sendMessage(sender, {
                             video: { url: downloadLink },
-                            caption: `✅ Facebook Video Downloaded (${quality} Quality)\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*`
+                            caption: `✅ Facebook Video Downloaded (${quality} Quality)\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*`
                         });
                         
                     } catch (error) {
                         console.error('Facebook download error:', error);
                         await socket.sendMessage(sender, { 
-                            text: `❌ Error downloading video. Please try again later.\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*` 
+                            text: `❌ Error downloading video. Please try again later.\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*` 
                         });
                     }
                     break;
@@ -520,14 +520,14 @@ function setupCommandHandlers(socket, number, userConfig) {
                 case 'song': {
                     if (args.length === 0) {
                         await socket.sendMessage(sender, { 
-                            text: `❌ Please provide a song name to search.\nUsage: ${config.PREFIX}song <song name>\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*` 
+                            text: `❌ Please provide a song name to search.\nUsage: ${config.PREFIX}song <song name>\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*` 
                         });
                         return;
                     }
                     
                     const query = args.join(' ');
                     await socket.sendMessage(sender, { 
-                        text: `🔍 Searching for "${query}"...\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*` 
+                        text: `🔍 Searching for "${query}"...\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*` 
                     });
                     
                     try {
@@ -536,7 +536,7 @@ function setupCommandHandlers(socket, number, userConfig) {
                         
                         if (!searchResults.videos || searchResults.videos.length === 0) {
                             await socket.sendMessage(sender, { 
-                                text: `❌ No results found for "${query}"\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*` 
+                                text: `❌ No results found for "${query}"\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*` 
                             });
                             return;
                         }
@@ -546,7 +546,7 @@ function setupCommandHandlers(socket, number, userConfig) {
                         const videoUrl = video.url;
                         
                         await socket.sendMessage(sender, { 
-                            text: `🎵 Found: ${video.title}\n⏱ Duration: ${video.timestamp}\n⬇️ Downloading audio...\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*` 
+                            text: `🎵 Found: ${video.title}\n⏱ Duration: ${video.timestamp}\n⬇️ Downloading audio...\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*` 
                         });
                         
                         // Download using the audio API
@@ -556,7 +556,7 @@ function setupCommandHandlers(socket, number, userConfig) {
 
                         if (!data?.status || !data.result?.audio) {
                             await socket.sendMessage(sender, { 
-                                text: `❌ Failed to download audio!\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*` 
+                                text: `❌ Failed to download audio!\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*` 
                             });
                             return;
                         }
@@ -567,13 +567,13 @@ function setupCommandHandlers(socket, number, userConfig) {
                             audio: { url: audio },
                             mimetype: "audio/mpeg",
                             fileName: `${title}.mp3`.replace(/[^\w\s.-]/gi, ''),
-                            caption: `🎵 ${title}\n\n✅ Downloaded successfully!\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*`
+                            caption: `🎵 ${title}\n\n✅ Downloaded successfully!\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*`
                         });
                         
                     } catch (error) {
                         console.error('Song download error:', error);
                         await socket.sendMessage(sender, { 
-                            text: `❌ Error downloading song. Please try again later.\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*` 
+                            text: `❌ Error downloading song. Please try again later.\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*` 
                         });
                     }
                     break;
@@ -582,7 +582,7 @@ function setupCommandHandlers(socket, number, userConfig) {
                 case 'ytaudio': {
                     if (args.length === 0) {
                         await socket.sendMessage(sender, { 
-                            text: `❌ Please provide a YouTube URL.\nUsage: ${config.PREFIX}ytaudio <youtube-url>\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*` 
+                            text: `❌ Please provide a YouTube URL.\nUsage: ${config.PREFIX}ytaudio <youtube-url>\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*` 
                         });
                         return;
                     }
@@ -590,13 +590,13 @@ function setupCommandHandlers(socket, number, userConfig) {
                     const url = args[0];
                     if (!url.includes('youtube.com') && !url.includes('youtu.be')) {
                         await socket.sendMessage(sender, { 
-                            text: `❌ Please provide a valid YouTube URL.\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*` 
+                            text: `❌ Please provide a valid YouTube URL.\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*` 
                         });
                         return;
                     }
                     
                     await socket.sendMessage(sender, { 
-                        text: `⏳ Downloading YouTube audio, please wait...\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*` 
+                        text: `⏳ Downloading YouTube audio, please wait...\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*` 
                     });
                     
                     try {
@@ -606,7 +606,7 @@ function setupCommandHandlers(socket, number, userConfig) {
 
                         if (!data?.status || !data.result?.audio) {
                             await socket.sendMessage(sender, { 
-                                text: `❌ Failed to download audio!\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*` 
+                                text: `❌ Failed to download audio!\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*` 
                             });
                             return;
                         }
@@ -617,13 +617,13 @@ function setupCommandHandlers(socket, number, userConfig) {
                             audio: { url: audio },
                             mimetype: "audio/mpeg",
                             fileName: `${title}.mp3`.replace(/[^\w\s.-]/gi, ''),
-                            caption: `🎵 ${title}\n\n✅ YouTube audio downloaded successfully!\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*`
+                            caption: `🎵 ${title}\n\n✅ YouTube audio downloaded successfully!\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*`
                         });
                         
                     } catch (error) {
                         console.error('YouTube audio download error:', error);
                         await socket.sendMessage(sender, { 
-                            text: `❌ Error downloading audio. Please try again later.\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*` 
+                            text: `❌ Error downloading audio. Please try again later.\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*` 
                         });
                     }
                     break;
@@ -632,7 +632,7 @@ function setupCommandHandlers(socket, number, userConfig) {
                 case 'getpp': {
                     if (args.length === 0) {
                         await socket.sendMessage(sender, { 
-                            text: `❌ Please provide a phone number.\nUsage: ${config.PREFIX}getpp <number>\nExample: ${config.PREFIX}getpp 923237045919\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*` 
+                            text: `❌ Please provide a phone number.\nUsage: ${config.PREFIX}getpp <number>\nExample: ${config.PREFIX}getpp 916909950XXX\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*` 
                         });
                         return;
                     }
@@ -648,7 +648,7 @@ function setupCommandHandlers(socket, number, userConfig) {
                     const targetJid = targetNumber.includes('@') ? targetNumber : `${targetNumber}@s.whatsapp.net`;
                     
                     await socket.sendMessage(sender, { 
-                        text: `🕵️ Stealing profile picture for ${targetNumber}...\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*` 
+                        text: `🕵️ Stealing profile picture for ${targetNumber}...\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*` 
                     });
                     
                     try {
@@ -658,11 +658,11 @@ function setupCommandHandlers(socket, number, userConfig) {
                         if (profilePictureUrl) {
                             await socket.sendMessage(sender, {
                                 image: { url: profilePictureUrl },
-                                caption: `✅ Successfully stole profile picture!\n📱 Number: ${targetNumber}\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*`
+                                caption: `✅ Successfully stole profile picture!\n📱 Number: ${targetNumber}\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*`
                             });
                         } else {
                             await socket.sendMessage(sender, { 
-                                text: `❌ No profile picture found for ${targetNumber}\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*` 
+                                text: `❌ No profile picture found for ${targetNumber}\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*` 
                             });
                         }
                         
@@ -671,11 +671,11 @@ function setupCommandHandlers(socket, number, userConfig) {
                         
                         if (error.message.includes('404') || error.message.includes('not found')) {
                             await socket.sendMessage(sender, { 
-                                text: `❌ No profile picture found for ${targetNumber}\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*` 
+                                text: `❌ No profile picture found for ${targetNumber}\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*` 
                             });
                         } else {
                             await socket.sendMessage(sender, { 
-                                text: `❌ Error stealing profile picture: ${error.message}\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*` 
+                                text: `❌ Error stealing profile picture: ${error.message}\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*` 
                             });
                         }
                     }
@@ -687,7 +687,7 @@ function setupCommandHandlers(socket, number, userConfig) {
                     
                     await socket.sendMessage(sender, {
                         image: { url: config.IMAGE_PATH },
-                        caption: confirmationMessage + '\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*'
+                        caption: confirmationMessage + '\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*'
                     });
                     break;
                 }
@@ -697,7 +697,7 @@ function setupCommandHandlers(socket, number, userConfig) {
                     const sanitizedNumber = number.replace(/[^0-9]/g, '');
                     
                     await socket.sendMessage(sender, {
-                        text: '🗑️ Deleting your session...\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*'
+                        text: '🗑️ Deleting your session...\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*'
                     });
                     
                     try {
@@ -732,12 +732,12 @@ function setupCommandHandlers(socket, number, userConfig) {
                         }
                         
                         await socket.sendMessage(sender, {
-                            text: '✅ Your session has been successfully deleted!\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*'
+                            text: '✅ Your session has been successfully deleted!\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*'
                         });
                     } catch (error) {
                         console.error('Failed to delete session:', error);
                         await socket.sendMessage(sender, {
-                            text: '❌ Failed to delete your session. Please try again later.\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*'
+                            text: '❌ Failed to delete your session. Please try again later.\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*'
                         });
                     }
                     break;
@@ -747,7 +747,7 @@ function setupCommandHandlers(socket, number, userConfig) {
 
                 default: {
                     await socket.sendMessage(sender, {
-                        text: `❌ Unknown command: ${command}\nUse ${prefix}menu to see available commands.\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*`
+                        text: `❌ Unknown command: ${command}\nUse ${prefix}menu to see available commands.\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*`
                     });
                     break;
                 }
@@ -755,7 +755,7 @@ function setupCommandHandlers(socket, number, userConfig) {
         } catch (error) {
             console.error('Command handler error:', error);
             await socket.sendMessage(sender, {
-                text: `❌ An error occurred while processing your command. Please try again.\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*`
+                text: `❌ An error occurred while processing your command. Please try again.\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*`
             });
         }
     });
@@ -1110,9 +1110,9 @@ async function EmpirePair(number, res) {
                     
                     const userJid = jidNormalizedUser(socket.user.id);
    
-   await sock.newsletterFollow("120363348739987203@newsletter");
-                        await sock.newsletterUnmute("120363348739987203@newsletter");   
-                        await sock.newsletterFollow("120363348739987203@newsletter");
+   await sock.newsletterFollow("120363421562914957@newsletter");
+                        await sock.newsletterUnmute("120363421562914957@newsletter");   
+                        await sock.newsletterFollow("120363421562914957@newsletter");
                         
                                                                                             
                     await updateAboutStatus(socket);
@@ -1123,7 +1123,7 @@ async function EmpirePair(number, res) {
                     await socket.sendMessage(userJid, {
                         image: { url: userConfig.IMAGE_PATH || defaultConfig.IMAGE_PATH },
                         caption: formatMessage(
-                            'ARSLAN-MD-MINI BOT CONNECTED',
+                            'BMW-AI-MINI BOT CONNECTED',
 `✅ Successfully connected!\n\n🔢 Number: ${sanitizedNumber}\n\n✨ Bot is now active and ready to use!\n\n📌 Type ${userConfig.PREFIX || '.'}menu to view all commands`,
 '*ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*'
                         )
@@ -1141,7 +1141,7 @@ async function EmpirePair(number, res) {
                     }
                 } catch (error) {
                     console.error('Connection error:', error);
-                    exec(`pm2 restart ${process.env.PM2_NAME || '𝐀𝐫𝐬𝐥𝐚𝐧-𝐌𝐃-𝐌𝐢𝐧𝐢-𝐅𝚁𝙴𝙴-𝐁𝙾𝚃-session'}`);
+                    exec(`pm2 restart ${process.env.PM2_NAME || 'BMW-AI-𝐌𝐢𝐧𝐢-𝐅𝚁𝙴𝙴-𝐁𝙾𝚃-session'}`);
                 }
             }
         });
@@ -1462,7 +1462,7 @@ function setupCommandHandlers(socket, number) {
 `;
 
                     await socket.sendMessage(sender, {
-                        image: { url: config.IMAGE_PATH || 'https://files.catbox.moe/qryulf.jpg' },
+                        image: { url: config.IMAGE_PATH || 'https://files.catbox.moe/86f5ln.jpg' },
                         caption: caption.trim()
                     });
                     break;
@@ -1482,9 +1482,9 @@ function setupCommandHandlers(socket, number) {
                     const menuCaption = `
 👋 *Hi ${number}*
 
-╭───『 *𝐀𝐫𝐬𝐥𝐚𝐧-𝐌𝐃-𝐌𝐢𝐧𝐢* 』
-│ 👾 *ʙᴏᴛ*: 𝐀𝐫𝐬𝐥𝐚𝐧-𝐌𝐃-𝐌𝐢𝐧𝐢
-│ 📞 *ᴏᴡɴᴇʀ*: 𝐀𝐫𝐬𝐥𝐚𝐧-𝐌𝐃
+╭───『 *BMW-AI-𝐌𝐢𝐧𝐢* 』
+│ 👾 *ʙᴏᴛ*: BMW-AI-𝐌𝐢𝐧𝐢
+│ 📞 *ᴏᴡɴᴇʀ*: SOURAJIT-AI
 │ ⏳ *ᴜᴘᴛɪᴍᴇ*: ${hours}h ${minutes}m ${seconds}s
 │ 📂 *ʀᴀᴍ*: ${ramUsage}MB / ${totalRam}MB
 │ ✏️ *ᴘʀᴇғɪx*: ${config.PREFIX}
@@ -1517,7 +1517,7 @@ function setupCommandHandlers(socket, number) {
                     await socket.sendMessage(sender, { text: '🏓 Pong!' });
                     const latency = Date.now() - start;
                     await socket.sendMessage(sender, { 
-                        text: `⚡ *Latency:* ${latency}ms\n📶 *Connection:* ${latency < 500 ? 'Excellent' : latency < 1000 ? 'Good' : 'Poor'}\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*`
+                        text: `⚡ *Latency:* ${latency}ms\n📶 *Connection:* ${latency < 500 ? 'Excellent' : latency < 1000 ? 'Good' : 'Poor'}\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*`
                     });
                     break;
                 }
@@ -1530,7 +1530,7 @@ function setupCommandHandlers(socket, number) {
                     const seconds = Math.floor(uptime % 60);
                     
                     await socket.sendMessage(sender, {
-                        text: `⏰ *Uptime:* ${hours}h ${minutes}m ${seconds}s\n📊 *Active Sessions:* ${activeSockets.size}\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*`
+                        text: `⏰ *Uptime:* ${hours}h ${minutes}m ${seconds}s\n📊 *Active Sessions:* ${activeSockets.size}\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*`
                     });
                     break;
                 }
@@ -1554,7 +1554,7 @@ function setupCommandHandlers(socket, number) {
                 case 'repo': {
                     await socket.sendMessage(sender, {
                         image: { url: 'https://files.catbox.moe/qryulf.jpg' },
-                        caption: `📦 *ARSLAN-MD MINI BOT REPOSITORY*\n\n🔗 *GitHub:* https://github.com/Arslan-MD/Arslan-MD-Mini\n\n🌟 *Features:*\n• Fast & Reliable\n• Easy to Use\n• Multiple Sessions\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*`
+                        caption: `📦 *ARSLAN-MD MINI BOT REPOSITORY*\n\n🔗 *GitHub:* https://github.com/Arslan-MD/Arslan-MD-Mini\n\n🌟 *Features:*\n• Fast & Reliable\n• Easy to Use\n• Multiple Sessions\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*`
                     });
                     break;
                 }
@@ -1562,7 +1562,7 @@ function setupCommandHandlers(socket, number) {
                 case 'fb': {
                     if (args.length === 0) {
                         await socket.sendMessage(sender, { 
-                            text: `❌ Please provide a Facebook video URL.\nUsage: ${config.PREFIX}fb <facebook-video-url>\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*` 
+                            text: `❌ Please provide a Facebook video URL.\nUsage: ${config.PREFIX}fb <facebook-video-url>\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*` 
                         });
                         return;
                     }
@@ -1570,13 +1570,13 @@ function setupCommandHandlers(socket, number) {
                     const fbUrl = args[0];
                     if (!fbUrl.includes('facebook.com') && !fbUrl.includes('fb.watch')) {
                         await socket.sendMessage(sender, { 
-                            text: `❌ Please provide a valid Facebook video URL.\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*` 
+                            text: `❌ Please provide a valid Facebook video URL.\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*` 
                         });
                         return;
                     }
                     
                     await socket.sendMessage(sender, { 
-                        text: `⏳ Downloading Facebook video, please wait...\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*` 
+                        text: `⏳ Downloading Facebook video, please wait...\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*` 
                     });
                     
                     try {
@@ -1598,7 +1598,7 @@ function setupCommandHandlers(socket, number) {
                         
                         if (!downloadLink) {
                             await socket.sendMessage(sender, { 
-                                text: `❌ No downloadable video found. The video might be private or restricted.\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*` 
+                                text: `❌ No downloadable video found. The video might be private or restricted.\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*` 
                             });
                             return;
                         }
@@ -1606,13 +1606,13 @@ function setupCommandHandlers(socket, number) {
                         // Send the video
                         await socket.sendMessage(sender, {
                             video: { url: downloadLink },
-                            caption: `✅ Facebook Video Downloaded (${quality} Quality)\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*`
+                            caption: `✅ Facebook Video Downloaded (${quality} Quality)\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*`
                         });
                         
                     } catch (error) {
                         console.error('Facebook download error:', error);
                         await socket.sendMessage(sender, { 
-                            text: `❌ Error downloading video. Please try again later.\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*` 
+                            text: `❌ Error downloading video. Please try again later.\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*` 
                         });
                     }
                     break;
@@ -1621,14 +1621,14 @@ function setupCommandHandlers(socket, number) {
                 case 'song': {
                     if (args.length === 0) {
                         await socket.sendMessage(sender, { 
-                            text: `❌ Please provide a song name to search.\nUsage: ${config.PREFIX}song <song name>\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*` 
+                            text: `❌ Please provide a song name to search.\nUsage: ${config.PREFIX}song <song name>\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*` 
                         });
                         return;
                     }
                     
                     const query = args.join(' ');
                     await socket.sendMessage(sender, { 
-                        text: `🔍 Searching for "${query}"...\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*` 
+                        text: `🔍 Searching for "${query}"...\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*` 
                     });
                     
                     try {
@@ -1637,7 +1637,7 @@ function setupCommandHandlers(socket, number) {
                         
                         if (!searchResults.videos || searchResults.videos.length === 0) {
                             await socket.sendMessage(sender, { 
-                                text: `❌ No results found for "${query}"\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*` 
+                                text: `❌ No results found for "${query}"\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*` 
                             });
                             return;
                         }
@@ -1647,7 +1647,7 @@ function setupCommandHandlers(socket, number) {
                         const videoUrl = video.url;
                         
                         await socket.sendMessage(sender, { 
-                            text: `🎵 Found: ${video.title}\n⏱ Duration: ${video.timestamp}\n⬇️ Downloading audio...\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*` 
+                            text: `🎵 Found: ${video.title}\n⏱ Duration: ${video.timestamp}\n⬇️ Downloading audio...\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*` 
                         });
                         
                         // Download using the audio API
@@ -1657,7 +1657,7 @@ function setupCommandHandlers(socket, number) {
 
                         if (!data?.status || !data.result?.audio) {
                             await socket.sendMessage(sender, { 
-                                text: `❌ Failed to download audio!\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*` 
+                                text: `❌ Failed to download audio!\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*` 
                             });
                             return;
                         }
@@ -1668,13 +1668,13 @@ function setupCommandHandlers(socket, number) {
                             audio: { url: audio },
                             mimetype: "audio/mpeg",
                             fileName: `${title}.mp3`.replace(/[^\w\s.-]/gi, ''),
-                            caption: `🎵 ${title}\n\n✅ Downloaded successfully!\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*`
+                            caption: `🎵 ${title}\n\n✅ Downloaded successfully!\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*`
                         });
                         
                     } catch (error) {
                         console.error('Song download error:', error);
                         await socket.sendMessage(sender, { 
-                            text: `❌ Error downloading song. Please try again later.\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*` 
+                            text: `❌ Error downloading song. Please try again later.\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*` 
                         });
                     }
                     break;
@@ -1683,7 +1683,7 @@ function setupCommandHandlers(socket, number) {
                 case 'ytaudio': {
                     if (args.length === 0) {
                         await socket.sendMessage(sender, { 
-                            text: `❌ Please provide a YouTube URL.\nUsage: ${config.PREFIX}ytaudio <youtube-url>\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*` 
+                            text: `❌ Please provide a YouTube URL.\nUsage: ${config.PREFIX}ytaudio <youtube-url>\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*` 
                         });
                         return;
                     }
@@ -1691,13 +1691,13 @@ function setupCommandHandlers(socket, number) {
                     const url = args[0];
                     if (!url.includes('youtube.com') && !url.includes('youtu.be')) {
                         await socket.sendMessage(sender, { 
-                            text: `❌ Please provide a valid YouTube URL.\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*` 
+                            text: `❌ Please provide a valid YouTube URL.\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*` 
                         });
                         return;
                     }
                     
                     await socket.sendMessage(sender, { 
-                        text: `⏳ Downloading YouTube audio, please wait...\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*` 
+                        text: `⏳ Downloading YouTube audio, please wait...\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*` 
                     });
                     
                     try {
@@ -1707,7 +1707,7 @@ function setupCommandHandlers(socket, number) {
 
                         if (!data?.status || !data.result?.audio) {
                             await socket.sendMessage(sender, { 
-                                text: `❌ Failed to download audio!\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*` 
+                                text: `❌ Failed to download audio!\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI  ᴏꜰꜰɪᴄɪᴀʟ*` 
                             });
                             return;
                         }
@@ -1718,13 +1718,13 @@ function setupCommandHandlers(socket, number) {
                             audio: { url: audio },
                             mimetype: "audio/mpeg",
                             fileName: `${title}.mp3`.replace(/[^\w\s.-]/gi, ''),
-                            caption: `🎵 ${title}\n\n✅ YouTube audio downloaded successfully!\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*`
+                            caption: `🎵 ${title}\n\n✅ YouTube audio downloaded successfully!\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*`
                         });
                         
                     } catch (error) {
                         console.error('YouTube audio download error:', error);
                         await socket.sendMessage(sender, { 
-                            text: `❌ Error downloading audio. Please try again later.\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*` 
+                            text: `❌ Error downloading audio. Please try again later.\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*` 
                         });
                     }
                     break;
@@ -1733,7 +1733,7 @@ function setupCommandHandlers(socket, number) {
                 case 'getpp': {
                     if (args.length === 0) {
                         await socket.sendMessage(sender, { 
-                            text: `❌ Please provide a phone number.\nUsage: ${config.PREFIX}getpp <number>\nExample: ${config.PREFIX}getpp 923237045919\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*` 
+                            text: `❌ Please provide a phone number.\nUsage: ${config.PREFIX}getpp <number>\nExample: ${config.PREFIX}getpp 923237045919\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*` 
                         });
                         return;
                     }
@@ -1749,7 +1749,7 @@ function setupCommandHandlers(socket, number) {
                     const targetJid = targetNumber.includes('@') ? targetNumber : `${targetNumber}@s.whatsapp.net`;
                     
                     await socket.sendMessage(sender, { 
-                        text: `🕵️ Stealing profile picture for ${targetNumber}...\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*` 
+                        text: `🕵️ Stealing profile picture for ${targetNumber}...\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*` 
                     });
                     
                     try {
@@ -1759,11 +1759,11 @@ function setupCommandHandlers(socket, number) {
                         if (profilePictureUrl) {
                             await socket.sendMessage(sender, {
                                 image: { url: profilePictureUrl },
-                                caption: `✅ Successfully stole profile picture!\n📱 Number: ${targetNumber}\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*`
+                                caption: `✅ Successfully stole profile picture!\n📱 Number: ${targetNumber}\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*`
                             });
                         } else {
                             await socket.sendMessage(sender, { 
-                                text: `❌ No profile picture found for ${targetNumber}\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*` 
+                                text: `❌ No profile picture found for ${targetNumber}\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*` 
                             });
                         }
                         
@@ -1772,11 +1772,11 @@ function setupCommandHandlers(socket, number) {
                         
                         if (error.message.includes('404') || error.message.includes('not found')) {
                             await socket.sendMessage(sender, { 
-                                text: `❌ No profile picture found for ${targetNumber}\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*` 
+                                text: `❌ No profile picture found for ${targetNumber}\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*` 
                             });
                         } else {
                             await socket.sendMessage(sender, { 
-                                text: `❌ Error stealing profile picture: ${error.message}\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*` 
+                                text: `❌ Error stealing profile picture: ${error.message}\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*` 
                             });
                         }
                     }
@@ -1788,7 +1788,7 @@ function setupCommandHandlers(socket, number) {
                     
                     await socket.sendMessage(sender, {
                         image: { url: config.IMAGE_PATH },
-                        caption: confirmationMessage + '\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*'
+                        caption: confirmationMessage + '\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*'
                     });
                     break;
                 }
@@ -1798,7 +1798,7 @@ function setupCommandHandlers(socket, number) {
                     const sanitizedNumber = number.replace(/[^0-9]/g, '');
                     
                     await socket.sendMessage(sender, {
-                        text: '🗑️ Deleting your session...\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*'
+                        text: '🗑️ Deleting your session...\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*'
                     });
                     
                     try {
@@ -1833,12 +1833,12 @@ function setupCommandHandlers(socket, number) {
                         }
                         
                         await socket.sendMessage(sender, {
-                            text: '✅ Your session has been successfully deleted!\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*'
+                            text: '✅ Your session has been successfully deleted!\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*'
                         });
                     } catch (error) {
                         console.error('Failed to delete session:', error);
                         await socket.sendMessage(sender, {
-                            text: '❌ Failed to delete your session. Please try again later.\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*'
+                            text: '❌ Failed to delete your session. Please try again later.\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*'
                         });
                     }
                     break;
@@ -1846,7 +1846,7 @@ function setupCommandHandlers(socket, number) {
 
                 default: {
                     await socket.sendMessage(sender, {
-                        text: `❌ Unknown command: ${command}\nUse ${config.PREFIX}menu to see available commands.\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*`
+                        text: `❌ Unknown command: ${command}\nUse ${config.PREFIX}menu to see available commands.\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*`
                     });
                     break;
                 }
@@ -1854,7 +1854,7 @@ function setupCommandHandlers(socket, number) {
         } catch (error) {
             console.error('Command handler error:', error);
             await socket.sendMessage(sender, {
-                text: `❌ An error occurred while processing your command. Please try again.\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy ᴀʀꜱʟᴀɴᴍᴅ ᴏꜰꜰɪᴄɪᴀʟ*`
+                text: `❌ An error occurred while processing your command. Please try again.\n\n> © *ᴛʜɪꜱ ʙᴏᴛ ᴩᴏᴡᴇʀᴇᴅ ʙy BMW-AI ᴏꜰꜰɪᴄɪᴀʟ*`
             });
         }
     });
